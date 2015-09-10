@@ -27,7 +27,7 @@
 \usepackage[compact]{titlesec}
 
 \newcommand{\heading}[1]{
-    \section*{\uline{\hfill #1}}
+    \section*{\uline{#1 \hfill}}
 }
 
 \newcommand{\squish}{
@@ -39,7 +39,7 @@
 
 % naming it 'date' would conflict with builtins
 \newcommand{\when}[1]{
-    \hfill \texttt{#1}
+    \hfill \emph{#1}
 }
 
 % place, optional title, date
@@ -63,14 +63,12 @@
         \texttt{#3}
         $\bullet$
 		\texttt{#4}
-        $\bullet$
-		\texttt{#5}
 	}
 
 }
 
 \newcommand{\skill}[2]{
-    \textbf{#1} \hfill #2 \\
+    \textbf{#1} \hspace{5 mm} #2 \hfill \\
 }
 
 \newcommand{\project}[2]{
@@ -81,46 +79,52 @@
 \begin{document}
 
 \centerline{{\LARGE \bf Ian Kronquist}}
+\vspace{3ex}
 
 \contact{iankronquist@teleport.com}
         {260 Pine Valley Road, Lake Oswego, Oregon}
 		{971 222 5148}
-		{iankronquist.me}
 		{github.com/iankronquist}
 
 \heading{Skills}
-	\skill{Development}{C, Python, C++, Ruby, Chef, Docker, Git, Github,
-	HTML/CSS/Javascript, Django, Flask}
-	\skill{Leadership}{curriculum design, lecturing}
+\begin{tabular}{ @{} l @{\hspace{6ex}} l }
+\textbf{Development} & Python, C/C++, Ruby, Chef, Puppet, Docker, Git, GitHub, Javascript, Django \\
+\textbf{Leadership} & Curriculum Design, Teaching, Public Speaking \\
+\end{tabular}
+
 \heading{Employment}
 \begin{description}
 \squish
+
+\experience{Puppet Labs, Puppet Language Design Team}
+           {Engineering Intern}
+           {June 2015-Present}
+		Implemented a tool to generate HTML documentation from code comments.
+		Designed and prototyped a system for instrumenting the Puppet parser to
+		extract test coverage statistics. Implemented built-in functions for
+		the Puppet catalog compiler.
+
 \experience{Oregon State University Open Source Lab}
            {Developer}
-           {November 2013-Present.}
-		Wrote web back end and deployment chef cookbooks for OSL websites.
-		Created docker development environments for OSL projects.
+           {November 2013-Present}
+		Wrote a web back end for the lab's NodeJS time management API.
+		Wrote Docker development environments and DevOps Chef cookbooks for
+		deploying the lab's Python web applications.
+		Used NodeJS, Javascript, Python, Django, Flask, Docker, and Chef.
 
-\experience{Mozilla Sumo Development Team}
+\experience{Mozilla, SUMO Engineering Team}
            {Intern}
-           {June-September 2014.}
+           {June-September 2014}
 		Designed and implemented a Bayesian spam and abuse detection and
 		filtering library in python for Mozilla's user input Django site.
 
 \experience{Reach Technology}
            {Intern}
-		   {July-September 2013.}
-		Wrote cross-platform C++ desktop application for the customer
+		   {July-September 2013}
+		Wrote a cross-platform C++ desktop application for the customer
 		development kit for an embedded graphics display module. Wrote the
 		company product wiki and documentation. Created customer video
 		tutorials.
-
-\experience{Xerox Corporation}
-           {Intern}
-		   {August-September 2011 and June-August 2012}
-		Developed C$\sharp$ desktop application for managing a print quality test
-		fixture. Wrote embedded motor control code for the machine in TMCL
-		assembly.
 
 \end{description}
 
@@ -131,6 +135,7 @@
 		Designed, constructed, and gathered donations for a lending library
 		for a disadvantaged community in North-East Portland as an Eagle
 		Project.
+
 	\experience{DevOps BootCamp}{}{}
 		Designed a curriculum and taught core software development and systems
 		operation skills to OSU students.
@@ -140,13 +145,14 @@
 \heading{Education}
 \squish
 \begin{description}
+\squish
 	\experience{Oregon State University}
 	           {Corvallis, Oregon.}
 			   {Current Student}
 		Pursuing a Dual Degree Bachelor of Science, Computer Science,
 		and Bachelor of Science, Mathematics.
-		Honors College student. Junior standing. Expected Graduation June 2016.
-		GPA: 3.68.
+		Honors College student. Senior standing, expected graduation Summer
+		2016.  GPA: 3.71.
 
 	\experience{AFS Turkey Foreign Exchange Program}
                {Adana, Turkey.}
@@ -161,12 +167,14 @@
 		Oregon Transfer degree.
 \end{description}
 
-\heading{Projects and Open Source Contributions}
-\project{MyPy:}{Static type checking for Python. Fixed parsing errors,
-	removed outdated systems.}
-\project{Hope JIT:}{A Python JIT for astronomical computations. Modified codegen
-to work on OS X Yosemite and added function argument validation.}
-\project{Kernel of Truth:}{Personal project implementing a i586 C kernel written
-	from scratch.}
+\heading{Projects and Notable Open Source Contributions}
+\begin{tabular}{ @{} l @{\hspace{6ex}} l }
+\textbf{MyPy} & Static type checking for Python. Fixed parsing errors,
+	removed outdated systems. \\
+\textbf{Hope JIT} & A Python JIT for astronomical computations. Modified codegen
+to work on OS X. \\
+\textbf{Kernel of Truth} & Personal project implementing a i586 C kernel written
+	from scratch. \\
+\end{tabular}
 
 \end{document}
