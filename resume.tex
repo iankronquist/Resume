@@ -1,125 +1,172 @@
-% Ian Kronquist
+% Ian Kronquist's Resume
+% Copyright 2015
 
 \documentclass[11pt]{article}
 \topmargin=0.0in
-\oddsidemargin=0.0in
-\evensidemargin=0in
-\textwidth=6.75in
+\textwidth=6.5in
+
+\topmargin 0pt
+\advance \topmargin by -\headheight
+\advance \topmargin by -\headsep
+
+\setlength{\hoffset}{-0.25in}
+
+\oddsidemargin 0pt
+\evensidemargin \oddsidemargin
+\marginparwidth 0.5in
+
+
 \headheight=0pt
 \headsep=0pt
-\textheight=9.25in
+\textheight=10.5in
+
 \pagenumbering{gobble}
 \setlength{\parindent}{0pt}
 
+\usepackage[normalem]{ulem} % for the underlines
+\usepackage[compact]{titlesec}
+
+\newcommand{\heading}[1]{
+    \section*{\uline{\hfill #1}}
+}
+
+\newcommand{\squish}{
+    \setlength{\itemsep}{0.5pt}
+    % tweak parskip value to adjust size on page
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0.5pt}
+}
+
+% naming it 'date' would conflict with builtins
+\newcommand{\when}[1]{
+    \hfill \texttt{#1}
+}
+
+% place, optional title, date
+\newcommand{\experience}[3]{
+    \ifx&#2&
+        \item[{#1}]
+    \else
+        \item[{#1}, \emph{#2}]
+    \fi
+    \when{#3}\\
+}
+
+\newcommand{\contact}[5]{
+    \centerline{
+        \large
+        \texttt{#1}
+        $\bullet$
+        \texttt{#2}
+    }
+	\centerline{
+        \texttt{#3}
+        $\bullet$
+		\texttt{#4}
+        $\bullet$
+		\texttt{#5}
+	}
+
+}
+
+\newcommand{\skill}[2]{
+    \textbf{#1} \hfill #2 \\
+}
+
+\newcommand{\project}[2]{
+    \textbf{#1} \hfill #2 \\
+}
+
+
 \begin{document}
+
 \centerline{{\LARGE \bf Ian Kronquist}}
 
-\bigskip
+\contact{iankronquist@teleport.com}
+        {260 Pine Valley Road, Lake Oswego, Oregon}
+		{971 222 5148}
+		{iankronquist.me}
+		{github.com/iankronquist}
 
-\centerline{
-	Email: iankronquist@teleport.com
-	$\bullet$
-	260 Pine Valley Road, Lake Oswego, Oregon
-}
-\centerline{
-	Projects at github.com/iankronquist
-	$\bullet$
-	Phone number: 971 222 5148
-}
-
-
-\bigskip
-
-\bigskip
-
-\hrule
-
-\bigskip
-
-\bigskip
-
-{\Large \bf Professional Experience:}
-\normalsize
+\heading{Skills}
+	\skill{Development}{C, Python, C++, Ruby, Chef, Docker, Git, Github,
+	HTML/CSS/Javascript, Django, Flask}
+	\skill{Leadership}{curriculum design, lecturing}
+\heading{Employment}
 \begin{description}
+\squish
+\experience{Oregon State University Open Source Lab}
+           {Developer}
+           {November 2013-Present.}
+		Wrote web back end and deployment chef cookbooks for OSL websites.
+		Created docker development environments for OSL projects.
 
-	\item[Oregon State University Open Source Lab, Developer.
-		\hfill November 2013-Present.]
-		\hfill \\
-		Wrote web back end and deployment scripts for the
-		Oregon Virtual School Districts websites. 
-		Wrote docker development environment and contributed to the
-		National Sea Grant What's Fresh API project.
-		Used Python, Django, Flask, Docker, and Chef.
-
-	\item[Mozilla SUMO Web Development Team, Intern.
-		\hfill June-September 2014.]
-		\hfill \\
+\experience{Mozilla Sumo Development Team}
+           {Intern}
+           {June-September 2014.}
 		Designed and implemented a Bayesian spam and abuse detection and
-		filtering library for Mozilla's user input site.
-		Used Python and Django, as well as Javscript and D3.js.
+		filtering library in python for Mozilla's user input Django site.
 
-	\item[Reach Technology, Intern.
-		\hfill July-September 2013.]
-		\hfill \\
-		Wrote software for the customer development kit for a graphics
-		display module running Linux. Wrote the company product wiki 
-		and documentation. Created customer video tutorials. Used C++,
-		the Qt Framework, and QML languages.
+\experience{Reach Technology}
+           {Intern}
+		   {July-September 2013.}
+		Wrote cross-platform C++ desktop application for the customer
+		development kit for an embedded graphics display module. Wrote the
+		company product wiki and documentation. Created customer video
+		tutorials.
 
-	\item[Xerox Corporation, Intern.
-		\hfill  August-October 2011 and June-August 2012.]
-		\hfill \\
-		Wrote front end and back end code for an internal print quality
-		test fixture.
-		Used C\#, SQL, and TMCL Assembly languages.
+\experience{Xerox Corporation}
+           {Intern}
+		   {August-September 2011 and June-August 2012}
+		Developed C$\sharp$ desktop application for managing a print quality test
+		fixture. Wrote embedded motor control code for the machine in TMCL
+		assembly.
 
-	\item[Eagle Scout.
-		\hfill August 2012.]
-		\hfill \\
+\end{description}
+
+\heading{Leadership}
+\begin{description}
+\squish
+	\experience{Eagle Scout}{}{}
 		Designed, constructed, and gathered donations for a lending library
 		for a disadvantaged community in North-East Portland as an Eagle
 		Project.
+	\experience{DevOps BootCamp}{}{}
+		Designed a curriculum and taught core software development and systems
+		operation skills to OSU students.
 
 \end{description}
 
-\bigskip
-
-{\Large \bf Education:}
+\heading{Education}
+\squish
 \begin{description}
-	\item[Oregon State University, Corvallis, Oregon.
-		\hfill Current Student.]
-		\hfill \\
+	\experience{Oregon State University}
+	           {Corvallis, Oregon.}
+			   {Current Student}
 		Pursuing a Dual Degree Bachelor of Science, Computer Science,
 		and Bachelor of Science, Mathematics.
 		Honors College student. Junior standing. Expected Graduation June 2016.
-		GPA: 3.77.
-		
-	\item[AFS Turkey Foreign Exchange Program, Adana, Turkey.
-		\hfill September 2012-July 2013.]
-		\hfill \\
-		Attended G{\" u}ndo{\u g}du Koleji (Sunrise High School) in Adana, 
+		GPA: 3.68.
+
+	\experience{AFS Turkey Foreign Exchange Program}
+               {Adana, Turkey.}
+			   {September 2012-July 2013}
+		Attended G{\" u}ndo{\u g}du Koleji (Sunrise High School) in Adana,
 		Turkey. Proficient in the Turkish Language.
 
-	\item[Portland Community College, Portland, Oregon.
-		\hfill June 2012.]
-		\hfill \\
-		Graduated with Honors with an Associates of Arts 
+	\experience{Portland Community College}
+	           {Portland, Oregon}
+			   {June, 2012}
+		Graduated with Honors with an Associates of Arts
 		Oregon Transfer degree.
-
 \end{description}
 
-\bigskip
-
-{\Large \bf Projects and Open Source Contributions:}
-\begin{description}
-\item[DevOps BootCamp:] Designed a curriculum and taught core
-software development and systems operation skills to OSU students.
-\item[MyPy:] Static type checking for Python. Fixed parsing errors,
-	removed outdated systems.
-\item[Hope JIT:] A Python JIT for astronomical computations. Modified codegen
-to work on OS X Yosemite and added function argument validation.
-\item[Kernel of Truth:] Personal project implementing a i586 C kernel written
-	from scratch.
-\end{description}
+\heading{Projects and Open Source Contributions}
+\project{MyPy:}{Static type checking for Python. Fixed parsing errors,
+	removed outdated systems.}
+\project{Hope JIT:}{A Python JIT for astronomical computations. Modified codegen
+to work on OS X Yosemite and added function argument validation.}
+\project{Kernel of Truth:}{Personal project implementing a i586 C kernel written
+	from scratch.}
 
 \end{document}
