@@ -33,7 +33,7 @@
 \newcommand{\squish}{
     \setlength{\itemsep}{0.5pt}
     % tweak parskip value to adjust size on page
-    \setlength{\parskip}{0pt}
+    \setlength{\parskip}{6pt}
     \setlength{\parsep}{0.5pt}
 }
 
@@ -47,7 +47,7 @@
     \ifx&#2&
         \item[{#1}]
     \else
-        \item[{#1}, \emph{#2}]
+\item[{#1}] \emph{#2}
     \fi
     \when{#3}\\
 }
@@ -80,27 +80,37 @@
 \vspace{3ex}
 
 \contact{iankronquist@gmail.com}
-		{971 222 5148}
+		{+1 971 222 5148}
 		{github.com/iankronquist}\\
 
 \heading{Skills}
 \hskip-0.25cm \begin{tabular}{p{3cm} p{12cm}}
-\textbf{Development} & Python, C, C++, Go, JavaScript, Haskell, Docker,
-	Git, Linux, Windows \\
-\textbf{Leadership} & Curriculum Design, Teaching, Public Speaking \\
+    \textbf{Development} & C, C++, Python, Go, Git, Linux \& Containers, Hypervisors, Kernels \\
 \end{tabular}
 
 \heading{Employment}
 \begin{description}
-\squish
+% \squish
+\vspace{1ex}
 
+\experience{Microsoft, Platform Security Team}
+        {Software Engineer II}
+        {September 2017-Present}
+		Designed and implemented mitigations to harden Windows components and
+		break exploit techniques. One such mitigation, Win32k Object Type
+		Isolation, successfully defended against over a dozen CVE-worthy cases
+		in 2019 alone. Developed CastGuard, a compiler based mitigation to
+		prevent illegal downcasts in C++. Also helped deliver Address Sanitizer
+		support for the Microsoft MSVC C++ compiler.
+        %\bigskip
 \experience{Barkly Protects, Protection Team}
            {Software Engineer}
-           {July 2016-Present}
+           {July 2016-July 2017}
 		Core developer of a Windows filesystem filter driver and a hypervisor
 		designed to detect and stop malware. Collaborated with malware
 		researchers to develop new rules to stop ransomware and measure
 		protection coverage using the Cuckoo malware analysis framework.
+        %\vskip 0.2in
 
 \experience{Oregon State University Open Source Lab}
            {Developer}
@@ -108,6 +118,7 @@
 		Wrote a web back end for the lab's NodeJS time management API.
 		Created Docker development environments and DevOps Chef cookbooks for
 		deploying the lab's Python web applications.
+        %\bigskip
 
 \experience{Puppet Labs, Puppet Language Design Team}
            {Intern}
@@ -116,33 +127,21 @@
 		from code comments. Designed and prototyped a system for instrumenting
 		the Puppet parser to extract test coverage statistics. Implemented
 		built-in functions for the Puppet catalog compiler.
+        %\bigskip
 
 \experience{Mozilla, SUMO Engineering Team}
            {Intern}
            {June-September 2014}
 		Designed and implemented a Bayesian spam and abuse detection and
 		filtering library in Python for Mozilla's user input Django site.
+        %\bigskip
 
 \experience{Reach Technology}
            {Intern}
 		   {July-September 2013}
 		Wrote a cross-platform C++ desktop application for the customer
-		development kit for an embedded graphics display module. Authored the
-		company product wiki and documentation.
-
-\end{description}
-
-\heading{Leadership}
-\begin{description}
-\squish
-	\experience{Eagle Scout}{}{}
-		Designed, constructed, and gathered donations for a lending library
-		for a disadvantaged community in North-East Portland as an Eagle
-		Project.
-
-	\experience{DevOps BootCamp}{}{}
-		Designed a curriculum and taught core software development and systems
-		operation skills to OSU students.
+		development kit for an embedded graphics display module.
+        %\bigskip
 
 \end{description}
 
@@ -153,7 +152,7 @@
 	\experience{Oregon State University}
 	           {Corvallis, Oregon}
 			   {September 2013-June 2017}
-		Bachelor of Science, Computer Science, Honors Degree.
+		Bachelor of Science, Computer Science, Honors Degree. Implemented a honeypot to monitor vulnerable containers as a Senior Project.
 
 	\experience{AFS Turkey Foreign Exchange Program}
                {Adana, Turkey}
@@ -161,21 +160,23 @@
 		Attended G{\" u}ndo{\u g}du Koleji (Sunrise High School) in Adana,
 		Turkey. Proficient in the Turkish Language.
 
+	\experience{Eagle Scout}{}{}
+		Designed, constructed, and gathered donations for a lending library
+		as an Eagle Project.
+
 \end{description}
 
-\heading{Projects of Note}
-\begin{description}
-	\experience{Expose VM Internals to SysFS}{}{}
-	 OSU honors college project to expose fields of the x86 Virtual Machine
-	 Control Structure to SysFS for fault injection.
-	\experience{Kernel of Truth}{}{}
-	Personal project implementing an x86\_64 C kernel written from scratch.
-\end{description}
+%\heading{Projects of Note}
+%\begin{description}
+%	\experience{Expose VM Internals to SysFS}{}{}
+%	 OSU honors college project to expose fields of the x86 Virtual Machine
+%	 Control Structure to SysFS for fault injection.
+%\end{description}
 
 \heading{Talks}
 \begin{description}
 \squish
-	\experience{How to Train Your Compiler}{Seattle GNU/Linux Conference}{October, 2015}
+        \experience{The Life \& Death of Kernel Object Abuse by Type Isolation }{}{OPCDE Dubai \& Hack In the Box Amsterdam}{}
 \end{description}
 
 \end{document}
